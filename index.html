@@ -560,6 +560,104 @@
             margin-bottom: 24px;
         }
         
+        /* AI Chat Widget */
+        #td-chat-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+        }
+        
+        #td-chat-button {
+            background: #2563eb;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 24px rgba(37, 99, 235, 0.3);
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        #td-chat-button:hover {
+            transform: scale(1.05);
+        }
+        
+        #td-chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 48px rgba(0,0,0,0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        #td-chat-header {
+            background: #2563eb;
+            color: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        #td-chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #td-chat-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            background: #f8fafc;
+        }
+        
+        #td-chat-input-container {
+            display: flex;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        #td-chat-input {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+        
+        #td-chat-send {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0 24px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        #td-chat-send:hover {
+            background: #1d4ed8;
+        }
+        
         /* Responsive */
         @media (max-width: 1024px) {
             .team-grid {
@@ -624,8 +722,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Reach <span>5,000+ Homes</span> with Every Mail Drop</h1>
-            <p>Every Door Direct Mail marketing for local businesses. Your ad on professional postcards delivered to targeted neighborhoods—no mailing lists required.</p>
+            <h1>Monthly <span>Marketing Campaigns</span> That Work</h1>
+            <p>Join targeted EDDM campaigns reaching 5,000+ San Antonio homes. Professional design, printing, and USPS delivery—all included. One price. No guesswork.</p>
             <a href="#contact" class="contact-cta">Start Your Campaign</a>
             
             <div class="hero-stats">
@@ -634,8 +732,8 @@
                     <div class="stat-label">Homes Reached</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">16</div>
-                    <div class="stat-label">Ads Per Card</div>
+                    <div class="stat-value">Monthly</div>
+                    <div class="stat-label">Campaign Drops</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">100%</div>
@@ -656,23 +754,23 @@
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Choose Your Spot</h3>
-                    <p>Select your ad size and neighborhood targeting. We research the best zip codes for your industry.</p>
+                    <h3>Join a Campaign</h3>
+                    <p>Reserve your space in our next monthly campaign. Choose your ad size—space determines price, not your level of participation.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>We Design Your Ad</h3>
-                    <p>Our design team creates a professional ad that highlights your business and drives response.</p>
+                    <h3>We Handle Everything</h3>
+                    <p>Professional design, USPS compliance, printing, and delivery. You approve, we execute.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Quality Assurance</h3>
-                    <p>Every postcard goes through our USPS compliance checklist to ensure zero rejections.</p>
+                    <h3>Campaign Drops</h3>
+                    <p>Your postcard reaches 5,000+ targeted homes. Same day every month—build brand recognition.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Mail Drop</h3>
-                    <p>Your postcard reaches 5,000+ targeted homes. Track your campaign and watch leads come in.</p>
+                    <h3>Track Results</h3>
+                    <p>See who responded, track calls, and measure ROI. We help you optimize for next month.</p>
                 </div>
             </div>
         </div>
@@ -682,32 +780,34 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>One monthly fee. No hidden costs. Professional design included.</p>
+                <h2>Campaign Packages</h2>
+                <p>Space determines price, not participation. All packages include design, printing, and delivery.</p>
             </div>
             
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div class="pricing-tier">Economy</div>
+                    <div class="pricing-tier">Starter</div>
                     <div class="pricing-price">$150<span>/mo</span></div>
                     <ul class="pricing-features">
-                        <li>Quarter-page slot on card</li>
-                        <li>Professional design</li>
-                        <li>USPS EDDM compliance</li>
+                        <li>Small ad space on card</li>
+                        <li>Professional design included</li>
+                        <li>USPS EDDM delivery</li>
                         <li>Neighborhood targeting</li>
+                        <li>Monthly campaign drops</li>
                         <li>Email support</li>
                     </ul>
                     <a href="#contact" class="pricing-cta">Get Started</a>
                 </div>
                 
                 <div class="pricing-card featured">
-                    <div class="pricing-tier">Baseline</div>
+                    <div class="pricing-tier">Standard</div>
                     <div class="pricing-price">$550<span>/mo</span></div>
                     <ul class="pricing-features">
-                        <li>Half-page slot on card</li>
-                        <li>Professional design</li>
-                        <li>USPS EDDM compliance</li>
+                        <li>Medium ad space on card</li>
+                        <li>Professional design included</li>
+                        <li>USPS EDDM delivery</li>
                         <li>Priority placement</li>
+                        <li>Monthly campaign drops</li>
                         <li>Phone + email support</li>
                         <li>Performance reporting</li>
                     </ul>
@@ -718,13 +818,14 @@
                     <div class="pricing-tier">Premium</div>
                     <div class="pricing-price">$1,000<span>/mo</span></div>
                     <ul class="pricing-features">
-                        <li>Full slot on postcard</li>
-                        <li>Custom design</li>
-                        <li>USPS EDDM compliance</li>
+                        <li>Large ad space on card</li>
+                        <li>Custom design included</li>
+                        <li>USPS EDDM delivery</li>
                         <li>Front-page placement</li>
+                        <li>Monthly campaign drops</li>
                         <li>Dedicated account manager</li>
                         <li>Advanced analytics</li>
-                        <li>A/B testing options</li>
+                        <li>QR code tracking</li>
                     </ul>
                     <a href="#contact" class="pricing-cta">Get Started</a>
                 </div>
@@ -786,69 +887,63 @@
         </div>
     </section>
     
+    <!-- Next Campaign -->
+    <section class="next-campaign" id="campaign" style="padding: 80px 24px; background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%); color: white;">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <h2 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 16px; text-align: center;">🔥 Next Campaign: Summer "Beat the Heat"</h2>
+            <p style="font-size: 1.125rem; text-align: center; margin-bottom: 40px; opacity: 0.9;">Reserve your space now—only 16 spots per postcard.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px;">
+                <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 24px;">
+                    <div style="font-size: 0.875rem; opacity: 0.8; margin-bottom: 8px;">Campaign Dates</div>
+                    <div style="font-size: 1.5rem; font-weight: 700;">June 9-16, 2026</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 24px;">
+                    <div style="font-size: 0.875rem; opacity: 0.8; margin-bottom: 8px;">Homes Reached</div>
+                    <div style="font-size: 1.5rem; font-weight: 700;">5,000+</div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; margin-bottom: 32px;">
+                <div style="font-size: 0.875rem; opacity: 0.8; margin-bottom: 12px;">Best Industries for This Campaign:</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-weight: 600;">❄️ HVAC</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-weight: 600;">🏊 Pool Service</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-weight: 600;">🚗 Auto Repair</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-weight: 600;">🏠 Roofing</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-weight: 600;">💪 Fitness</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-weight: 600;">🍽️ Restaurants</span>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="#signup" class="contact-cta" style="background: white; color: #1e40af;">Reserve Your Space →</a>
+                <p style="font-size: 0.875rem; margin-top: 16px; opacity: 0.8;">Sales close: May 25, 2026 | Print deadline: June 5</p>
+            </div>
+        </div>
+    </section>
+    
     <!-- Lead Capture -->
     <section class="lead-capture" id="signup">
         <div class="container">
             <div class="section-header">
-                <h2>Start Your Campaign Today</h2>
-                <p>Fill out the form below and we'll contact you within 24 hours to discuss your EDDM campaign.</p>
+                <h2>Reserve Your Space</h2>
+                <p>Join our next campaign. Space is limited—16 businesses per postcard, first come first served.</p>
             </div>
             
-            <form class="signup-form" id="signupForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Smith">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="john@business.com">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(210) 555-1234">
-                    </div>
-                    <div class="form-group">
-                        <label for="business">Business Name *</label>
-                        <input type="text" id="business" name="business" required placeholder="ABC Roofing">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="industry">Industry *</label>
-                        <select id="industry" name="industry" required>
-                            <option value="">Select Industry</option>
-                            <option value="roofing">Roofing</option>
-                            <option value="hvac">HVAC</option>
-                            <option value="dental">Dental</option>
-                            <option value="restaurant">Restaurant</option>
-                            <option value="auto">Auto Repair</option>
-                            <option value="fitness">Fitness</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="tier">Select Package *</label>
-                        <select id="tier" name="tier" required>
-                            <option value="">Choose Package</option>
-                            <option value="economy">Economy - $150/mo (Quarter slot)</option>
-                            <option value="baseline">Baseline - $550/mo (Half slot)</option>
-                            <option value="premium">Premium - $1,000/mo (Full slot)</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label for="message">Message (Optional)</label>
-                    <textarea id="message" name="message" rows="3" placeholder="Tell us about your business and marketing goals..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Submit & Get Started</button>
-            </form>
+            <div class="signup-form" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSetA2D5fbPMWsK5pF8sPiEKr3bibi9ZIs2OL-741gGvJIlqgA/viewform?embedded=true" 
+                    width="100%" 
+                    height="800" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    style="border: none; border-radius: 8px;"
+                    loading="lazy">
+                    Loading…
+                </iframe>
+            </div>
             
             <div class="form-note">
                 <p>Or contact us directly: <a href="mailto:info@targeted-design.com">info@targeted-design.com</a> | <a href="tel:+12108805406">(210) 880-5406</a></p>
@@ -859,8 +954,8 @@
     <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2>Ready to Reach More Customers?</h2>
-            <p>Get your business in front of 5,000+ targeted homes this month. No contracts, cancel anytime.</p>
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Join our next campaign. 16 spots available per postcard—first come, first served.</p>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -878,11 +973,11 @@
             </div>
             
             <div class="payment-options">
-                <h3>Payment Coming Soon</h3>
-                <p>Secure payment processing will be available soon. For now, contact us to arrange payment.</p>
+                <h3>💡 Space Determines Price</h3>
+                <p>Your ad size determines your price—not your level of participation. Every package includes full design, printing, and USPS delivery. No hidden fees.</p>
             </div>
             
-            <a href="#signup" class="contact-cta">Sign Up Now</a>
+            <a href="#signup" class="contact-cta">Reserve Your Space</a>
         </div>
     </section>
     
@@ -897,47 +992,137 @@
         <p>&copy; 2026 Targeted Design. All rights reserved. | San Antonio, Texas</p>
     </footer>
     
+    <!-- AI Chat Widget -->
+    <div id="td-chat-widget">
+        <div id="td-chat-button">
+            💬 Chat with Alex
+        </div>
+        <div id="td-chat-window">
+            <div id="td-chat-header">
+                <span>🦾 Alex - AI Assistant</span>
+                <button id="td-chat-close">×</button>
+            </div>
+            <div id="td-chat-messages">
+                <div style="margin-bottom: 12px;">
+                    <span style="background: #e2e8f0; color: #334155; padding: 8px 16px; 
+                          border-radius: 16px; display: inline-block; max-width: 80%;">
+                        Hey! I'm Alex, CEO of Targeted Design. 👋 Ask me about our campaigns, pricing, or how EDDM can grow your business!
+                    </span>
+                </div>
+            </div>
+            <div id="td-chat-input-container">
+                <input type="text" id="td-chat-input" placeholder="Ask about our campaigns...">
+                <button id="td-chat-send">→</button>
+            </div>
+        </div>
+    </div>
+    
     <script>
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                timestamp: new Date().toISOString(),
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                business: document.getElementById('business').value,
-                industry: document.getElementById('industry').value,
-                tier: document.getElementById('tier').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Store lead locally (will be replaced with API)
-            const leads = JSON.parse(localStorage.getItem('tdLeads') || '[]');
-            leads.push(formData);
-            localStorage.setItem('tdLeads', JSON.stringify(leads));
-            
-            // Send via email
-            const mailtoLink = 'mailto:info@targeted-design.com?subject=New Lead: ' + encodeURIComponent(formData.business) + '&body=' + encodeURIComponent(
-                'Name: ' + formData.name + '\n' +
-                'Email: ' + formData.email + '\n' +
-                'Phone: ' + formData.phone + '\n' +
-                'Business: ' + formData.business + '\n' +
-                'Industry: ' + formData.industry + '\n' +
-                'Package: ' + formData.tier + '\n' +
-                'Message: ' + formData.message + '\n\n' +
-                'Submitted: ' + formData.timestamp
-            );
-            
-            // Show success
-            alert('Thank you! We\'ll contact you within 24 hours to discuss your EDDM campaign.');
-            
-            // Reset form
-            this.reset();
-            
-            // Open email client as backup
-            window.location.href = mailtoLink;
+        // Lead capture form - API integration
+        
+        
+        // AI Chat Widget
+        const chatButton = document.getElementById('td-chat-button');
+        const chatWindow = document.getElementById('td-chat-window');
+        const chatClose = document.getElementById('td-chat-close');
+        const chatSend = document.getElementById('td-chat-send');
+        const chatInput = document.getElementById('td-chat-input');
+        const chatMessages = document.getElementById('td-chat-messages');
+        
+        // Toggle chat window
+        chatButton.addEventListener('click', () => {
+            const isVisible = chatWindow.style.display === 'flex';
+            chatWindow.style.display = isVisible ? 'none' : 'flex';
+            if (!isVisible) chatInput.focus();
         });
+        
+        // Close button
+        chatClose.addEventListener('click', () => {
+            chatWindow.style.display = 'none';
+        });
+        
+        // Send message
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+        
+        // FAQ-based responses (no backend needed for now)
+        const faqResponses = {
+            'price': "Our campaigns start at $150/mo (small), $550/mo (medium), or $1,000/mo (large). All include design, printing, and delivery to 5,000+ homes. Which sounds right for your business?",
+            'cost': "Our campaigns start at $150/mo (small), $550/mo (medium), or $1,000/mo (large). All include design, printing, and delivery to 5,000+ homes. Which sounds right for your business?",
+            'start': "Our next campaign is June 9-16. We have 16 spots—11 remaining. Want to reserve yours? Fill out the form above or email Levi at info@targeted-design.com.",
+            'quickly': "Our next campaign is June 9-16. We have 16 spots—11 remaining. Want to reserve yours? Fill out the form above or email Levi at info@targeted-design.com.",
+            'eddm': "EDDM (Every Door Direct Mail) means your postcard reaches every home in targeted neighborhoods—no mailing lists needed. USPS handles delivery, we handle everything else.",
+            'what is eddm': "EDDM (Every Door Direct Mail) means your postcard reaches every home in targeted neighborhoods—no mailing lists needed. USPS handles delivery, we handle everything else.",
+            'industry': "We see great results with HVAC, Roofing, Auto Repair, Restaurants, Dental, and Fitness. But honestly, any local business serving homeowners can benefit. What do you do?",
+            'industries': "We see great results with HVAC, Roofing, Auto Repair, Restaurants, Dental, and Fitness. But do you?",
+            'guarantee': "We guarantee your satisfaction with the design and delivery. If you're not happy, we'll revise or re-run. Most clients see 2-5% response rates.",
+            'results': "We guarantee your satisfaction with the design and delivery. If you're not happy, we'll revise or re-run. Most clients see 2-5% response rates.",
+            'sample': "Absolutely! Email Levi at info@targeted-design.com. He can show you recent campaigns and discuss your specific needs.",
+            'samples': "Absolutely! Email Levi at info@targeted-design.com. He can show you recent campaigns and discuss your specific needs.",
+            'hello': "Hey! 👋 I'm Alex, CEO of Targeted Design. Ask me about our campaigns, pricing, or how EDDM can grow your business!",
+            'hi': "Hey! 👋 I'm Alex, CEO of Targeted Design. Ask me about our campaigns, pricing, or how EDDM can grow your business!",
+            'hey': "Hey! 👋 I'm Alex, CEO of Targeted Design. Ask me about our campaigns, pricing, or how EDDM can grow your business!",
+            'help': "I can help with:\n• Campaign pricing & packages\n• Next campaign dates\n• How EDDM works\n• Industries we serve\n• Getting started\n\nWhat would you like to know?",
+            'contact': "You can reach Levi at info@targeted-design.com. Or fill out the form above to reserve your spot! We respond within 24 hours.",
+            'phone': "Email us at info@targeted-design.com. We respond within 24 hours. Or fill out the form above!",
+            'email': "Email us at info@targeted-design.com. We respond within 24 hours.",
+            'design': "All packages include professional design. Our team creates your ad, you approve it, we print and mail. Easy!",
+            'delivery': "We deliver to 5,000+ homes in your target neighborhoods. USPS handles the final delivery—100% delivery rate guaranteed.",
+            'homes': "Each campaign reaches 5,000+ targeted homes in San Antonio. We research the best neighborhoods for your industry.",
+            'when': "Next campaign: June 9-16, 2026. Sales close May 25. Print deadline June 5. Want to reserve a spot?",
+            'june': "June 9-16, 2026. Theme: 'Beat the Heat'—perfect for HVAC, Pool Service, Auto, Roofing, Fitness, and Restaurants. 11 spots left!",
+            'spots': "Only 16 spots per campaign. June has 11 remaining. First come, first served. Want to reserve yours?",
+            'remaining': "June campaign: 11 spots remaining out of 16. Want to reserve yours before they're gone?",
+            'reserve': "Great! Fill out the form above or email Levi at info@targeted-design.com. He'll get you set up within 24 hours!",,
+            'call': "Email Levi at info@targeted-design.com. He responds within 24 hours. Or fill out the form above!",
+        };
+        
+        function sendMessage() {
+            const userMessage = chatInput.value.trim().toLowerCase();
+            if (!userMessage) return;
+            
+            // Add user message
+            chatMessages.innerHTML += `
+                <div style="text-align: right; margin-bottom: 12px;">
+                    <span style="background: #2563eb; color: white; padding: 8px 16px; 
+                          border-radius: 16px; display: inline-block;">
+                        ${chatInput.value.trim()}
+                    </span>
+                </div>
+            `;
+            
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Find matching response
+            let response = null;
+            for (const [key, value] of Object.entries(faqResponses)) {
+                if (userMessage.includes(key)) {
+                    response = value;
+                    break;
+                }
+            }
+            
+            // Default response
+            if (!response) {
+                response = "Great question! Let me connect you with Levi for the details. Call (210) 880-5406 or fill out the form above. He can answer specific questions about your business!";
+            }
+            
+            // Add AI response (with slight delay for realism)
+            setTimeout(() => {
+                chatMessages.innerHTML += `
+                    <div style="margin-bottom: 12px;">
+                        <span style="background: #e2e8f0; color: #334155; padding: 8px 16px; 
+                              border-radius: 16px; display: inline-block; max-width: 80%;">
+                            ${response}
+                        </span>
+                    </div>
+                `;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        }
     </script>
 </body>
 </html>

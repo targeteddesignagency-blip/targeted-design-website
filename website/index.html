@@ -931,61 +931,19 @@
                 <p>Join our next campaign. Space is limited—16 businesses per postcard, first come first served.</p>
             </div>
             
-            <form class="signup-form" id="signupForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Smith">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="john@business.com">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(210) 555-1234">
-                    </div>
-                    <div class="form-group">
-                        <label for="business">Business Name *</label>
-                        <input type="text" id="business" name="business" required placeholder="ABC Roofing">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="industry">Industry *</label>
-                        <select id="industry" name="industry" required>
-                            <option value="">Select Industry</option>
-                            <option value="roofing">Roofing</option>
-                            <option value="hvac">HVAC</option>
-                            <option value="dental">Dental</option>
-                            <option value="restaurant">Restaurant</option>
-                            <option value="auto">Auto Repair</option>
-                            <option value="fitness">Fitness</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="tier">Select Package *</label>
-                        <select id="tier" name="tier" required>
-                            <option value="">Choose Package</option>
-                            <option value="starter">Starter - $150/mo (Small space)</option>
-                            <option value="standard">Standard - $550/mo (Medium space)</option>
-                            <option value="premium">Premium - $1,000/mo (Large space)</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label for="message">Message (Optional)</label>
-                    <textarea id="message" name="message" rows="3" placeholder="Tell us about your business and marketing goals..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Submit & Get Started</button>
-            </form>
+            <div class="signup-form" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSetA2D5fbPMWsK5pF8sPiEKr3bibi9ZIs2OL-741gGvJIlqgA/viewform?embedded=true" 
+                    width="100%" 
+                    height="800" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    style="border: none; border-radius: 8px;"
+                    loading="lazy">
+                    Loading…
+                </iframe>
+            </div>
             
             <div class="form-note">
                 <p>Or contact us directly: <a href="mailto:info@targeted-design.com">info@targeted-design.com</a> | <a href="tel:+12108805406">(210) 880-5406</a></p>
@@ -1061,67 +1019,7 @@
     
     <script>
         // Lead capture form - API integration
-        document.getElementById('signupForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                business: document.getElementById('business').value,
-                industry: document.getElementById('industry').value,
-                tier: document.getElementById('tier').value,
-                message: document.getElementById('message').value
-            };
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
-            
-            try {
-                // API URL - Cloudflare Worker
-                const API_URL = 'https://td-lead-capture.targeted-design-agency.workers.dev/api/lead';
-                
-                // Try to send to API
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    // Show success with lead ID
-                    alert(`Thank you! Your lead ID is ${result.leadId}.\n\nWe'll contact you within 24 hours at ${formData.email}.`);
-                    this.reset();
-                } else {
-                    throw new Error(result.error || 'Submission failed');
-                }
-            } catch (error) {
-                // Fallback to mailto if API unavailable
-                console.warn('API unavailable, falling back to mailto:', error);
-                
-                const mailtoLink = 'mailto:info@targeted-design.com?subject=New Lead: ' + encodeURIComponent(formData.business) + '&body=' + encodeURIComponent(
-                    'Name: ' + formData.name + '\n' +
-                    'Email: ' + formData.email + '\n' +
-                    'Phone: ' + formData.phone + '\n' +
-                    'Business: ' + formData.business + '\n' +
-                    'Industry: ' + formData.industry + '\n' +
-                    'Package: ' + formData.tier + '\n' +
-                    'Message: ' + formData.message + '\n\n' +
-                    'Submitted: ' + new Date().toISOString()
-                );
-                
-                alert('Thank you! Opening your email client to send the lead details...');
-                this.reset();
-                window.location.href = mailtoLink;
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
+        
         
         // AI Chat Widget
         const chatButton = document.getElementById('td-chat-button');
