@@ -1,0 +1,12 @@
+# Targeted Design Agency - robots.txt
+# https://targeted-design.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://targeted-design.com/sitemap.xml
+
+# Disallow admin/internal paths
+Disallow: /agency/
+Disallow: /admin/
